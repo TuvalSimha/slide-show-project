@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Almost Free RealEstate</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="toast.css" />
+  </head>
+  <body>
+    <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light px-0 py-3">
+        <div class="container-xl">
+          <!-- Logo -->
+          <a class="navbar-brand" href="/public/index.html">
+            <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="currentColor" class="bi bi-bicycle" viewBox="0 0 16 16">
+              <path d="M4 4.5a.5.5 0 0 1 .5-.5H6a.5.5 0 0 1 0 1v.5h4.14l.386-1.158A.5.5 0 0 1 11 4h1a.5.5 0 0 1 0 1h-.64l-.311.935.807 1.29a3 3 0 1 1-.848.53l-.508-.812-2.076 3.322A.5.5 0 0 1 8 10.5H5.959a3 3 0 1 1-1.815-3.274L5 5.856V5h-.5a.5.5 0 0 1-.5-.5zm1.5 2.443-.508.814c.5.444.85 1.054.967 1.743h1.139L5.5 6.943zM8 9.057 9.598 6.5H6.402L8 9.057zM4.937 9.5a1.997 1.997 0 0 0-.487-.877l-.548.877h1.035zM3.603 8.092A2 2 0 1 0 4.937 10.5H3a.5.5 0 0 1-.424-.765l1.027-1.643zm7.947.53a2 2 0 1 0 .848-.53l1.026 1.643a.5.5 0 1 1-.848.53L11.55 8.623z"/>
+            </svg>
+          </a>
+          <!-- Navbar toggle -->
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarCollapse"
+            aria-controls="navbarCollapse"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <!-- Collapse -->
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <!-- Nav -->
+            <div class="navbar-nav mx-lg-auto">
+              <a
+                class="nav-item nav-link active"
+                href="#"
+                aria-current="page"
+                id="nav-home-link"
+                >Home</a
+              >
+              <a class="nav-item nav-link" href="#" id="nav-aboutus-link"
+                >About Us</a
+              >
+              <a
+                class="nav-item nav-link"
+                href="#"
+                id="nav-add-new-property-link"
+                >Add new property</a
+              >
+            </div>
+            <!-- Right navigation -->
+            <ul class="navbar-nav">
+              <form
+                class="d-flex responsive-nav-flex"
+                role="search"
+                id="navBeforeLogin"
+              >
+                <div class="navbar-nav ms-lg-4">
+                  <a class="nav-item nav-link" href="#" id="nav-login-page"
+                    >Sign in</a
+                  >
+                </div>
+                <!-- Action -->
+                <div class="d-flex align-items-lg-center mt-3 mt-lg-0">
+                  <a
+                    href="#"
+                    class="btn btn-sm btn-primary w-full w-lg-auto"
+                    id="nav-register-page"
+                  >
+                    Register
+                  </a>
+                </div>
+              </form>
+              <form
+                class="d-flex responsive-nav-flex d-none"
+                role="search"
+                id="navAfterLogin"
+              >
+                <div class="navbar-nav ms-lg-4">
+                  <a
+                    class="nav-item nav-link"
+                    href="#"
+                    id="nav-edit-profile-page"
+                    >Name</a
+                  >
+                </div>
+                <!-- Action -->
+                <div class="d-flex align-items-lg-center mt-3 mt-lg-0">
+                  <a
+                    href="#"
+                    class="btn btn-sm btn-primary w-full w-lg-auto"
+                    id="nav-logout"
+                  >
+                    Logout
+                  </a>
+                </div>
+              </form>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!-- TODO: Delete toast? -->
+      <div id="toast"></div>
+      <main>
+        <div id="home-page" class="d-block">
+          <div class="row align-items-center">
+            <div class="col-md-6 col-12 mb-3 mb-md-0">
+              <!-- Title -->
+              <h1 id="home-page" class="h2 mb-0 ls-tight d-block">Home Page</h1>
+            </div>
+            <!-- Actions -->
+            <div class="col-md-6 col-12 text-md-end">
+              <div class="mx-n1">
+                <a
+                  href="#"
+                  id="homeDisplayList"
+                  class="btn btn-dark">
+                  <span>List Display</span>
+              </a>
+                <a
+                  href="#"
+                  id="homeDisplayGallery"
+                  class="btn btn-dark">               
+                  <span>Gallery Display</span>
+                </a>
+                <a
+                  href="#"
+                  id="homeDisplayCarousel"
+                  class="btn btn-dark">               
+                  <span>Carousel Display</span>
+                </a>
+                <!-- <a
+                  href="#"
+                  id="home-page-properties-gallery"
+                  class="btn d-inline-flex btn-sm btn-neutral mx-1 btn-info"
+            
+                  <span>Properties Display</span>
+                </a> -->
+                <a
+                  href="#"
+                  id="homeDisplaySortDESC"
+                  class="btn btn-primary">             
+                  <i class="bi bi-sort-alpha-up"></i>
+                </a>
+                <a
+                  href="#"
+                  id="homeDisplaySortASC"
+                  class="btn btn-primary">
+                      
+                  <i class="bi bi-sort-alpha-down"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+
+        <!-- Home page -->
+          <div
+            class="popup-wrapper d-flex justify-content-center align-items-center d-none"
+            id="editPropertiesPopup"
+          >
+            <div class="popup-div" id="editPropertiesPopupChild">
+              <div class="card">
+                <img
+                  src=""
+                  class="card-img-top"
+                  alt=""
+                  id="editPropertiesPopupImgDisplay"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">
+                    <div class="form-floating mb-3">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="editPropertiesPopupName"
+                        placeholder="Name"
+                      />
+                      <label for="editPropertiesPopupName">Name</label>
+                    </div>
+                  </h5>
+                  <div class="card-text">
+                    <div class="form-floating">
+                      <textarea
+                        class="form-control"
+                        placeholder="description"
+                        id="editPropertiesPopupDescription"
+                      ></textarea>
+                      <label for="editPropertiesPopupDescription"
+                        >Description</label
+                      >
+                    </div>
+                  </div>
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">
+                    <div class="form-floating mb-3">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="editPropertiesPopupPrice"
+                        placeholder="Price"
+                      />
+                      <label for="editPropertiesPopupPrice">Price</label>
+                    </div>
+                  </li>
+                  <li class="list-group-item">
+                    <div class="form-floating mb-3">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="editPropertiesPopupImg"
+                        placeholder="Img"
+                      />
+                      <label for="editPropertiesPopupImg">Img</label>
+                    </div>
+                  </li>
+                </ul>
+                <div class="card-body">
+                  <button
+                    type="button"
+                    class="btn btn-success"
+                    id="editPropertiesPopupSaveBtn"
+                  >
+                    <i class="bi bi-check-circle-fill"></i> Save
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-danger"
+                    id="editPropertiesPopupCancelBtn"
+                  >
+                    <i
+                      class="bi bi-x-circle-fill"
+                      id="editPropertiesPopupCancelBtnIcon"
+                    ></i>
+                    Cancel
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- display all propertiues of the images -->
+          <div id="propertiesGallery" class="d-none">
+            <div
+              class="row row-cols-1 row-cols-md-3 g-4"
+              id="home-page-properties-gallery"
+            ></div>
+          </div>
+          <div id="propertiesList" class="d-none">
+            <ul class="list-group" id="home-page-properties-list"></ul>
+          </div>
+          <div class="carusel d-none" id="propertiesCarusel">
+            <div class="img-container" id="home-page-properties-carousel"></div>
+            <div class="d-flex justify-content-around">
+              <button
+                type="button"
+                class="btn btn-primary"
+                id="back-carusel-btn"
+              >
+                <i class="bi bi-arrow-left"></i>
+              </button>
+              <button
+                type="button"
+                class="btn btn-primary"
+                id="next-carusel-btn"
+              >
+                <i class="bi bi-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+        <!-- about us -->
+        <div id="about-us" class="d-none">
+          <h1>About us</h1>
+        </div>
+        <!-- register page -->
+        <div id="register-page" class="d-none">
+          <h1>Register page</h1>
+          <form onsubmit="event.preventDefault()">
+            <div class="form-floating mb-3">
+              <input
+                type="text"
+                class="form-control"
+                id="register-input-name"
+                placeholder="Your name"
+              />
+              <label for="register-input-name">Name</label>
+            </div>
+            <div
+              class="alert alert-danger d-none"
+              role="alert"
+              id="register-alert-name"
+            >
+              Name rules
+            </div>
+            <div class="form-floating mb-3">
+              <input
+                type="email"
+                class="form-control"
+                id="register-input-email"
+                placeholder="name@example.com"
+              />
+              <label for="register-input-email">Email address</label>
+            </div>
+            <div
+              class="alert alert-danger d-none"
+              role="alert"
+              id="register-alert-email"
+            >
+              Email rules
+            </div>
+            <div class="form-floating">
+              <input
+                type="password"
+                class="form-control"
+                id="register-input-password"
+                placeholder="Password"
+              />
+              <label for="register-input-password">Password</label>
+            </div>
+            <div
+              class="alert alert-danger d-none"
+              role="alert"
+              id="register-alert-password"
+            >
+              Name rules
+            </div>
+            <button class="btn btn-danger" disabled="true" id="register-btn">
+              Register
+            </button>
+          </form>
+        </div>
+        <!-- login page -->
+        <div class="container">
+        <div id="login-page" class="d-none">
+          <form onsubmit="event.preventDefault()">
+            <div class="mb-5">
+              <label class="form-label" for="login-input-email">Email address</label>
+              <input
+                type="email"
+                class="form-control"
+                id="login-input-email"
+                placeholder="name@example.com"
+              />
+            </div>
+            <div class="mb-5">
+              <label class="form-label" for="login-input-password">Password</label>
+              <input
+                type="password"
+                class="form-control"
+                id="login-input-password"
+                placeholder="Password"
+                autocomplete="current-password"
+              />
+            </div>
+            <div class="mb-5">
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  name="check_example"
+                  id="exampleCheck1"
+                />
+                <label class="form-check-label" for="exampleCheck1">
+                  Keep me logged in
+                </label>
+              </div>
+            </div>
+            <div>
+              <a id="login-btn" class="btn btn-primary w-full"> Sign in </a>
+            </div>
+          </form>
+        </div>
+      </div>
+        
+        <!-- Profile Page -->
+        <div id="profile-page" class="d-none">
+          <h1>Profile page</h1>
+          <form onsubmit="event.preventDefault()">
+            <div class="form-floating mb-3">
+              <input
+                type="text"
+                class="form-control"
+                id="profile-input-name"
+                placeholder="Your name"
+              />
+              <label for="profile-input-name">Name</label>
+            </div>
+            <div
+              class="alert alert-danger d-none"
+              role="alert"
+              id="profile-alert-name"
+            >
+              Name rules
+            </div>
+            <div class="form-floating mb-3">
+              <input
+                type="email"
+                class="form-control"
+                id="profile-input-email"
+                placeholder="name@example.com"
+              />
+              <label for="profile-input-email">Email address</label>
+            </div>
+            <div
+              class="alert alert-danger d-none"
+              role="alert"
+              id="profile-alert-email"
+            >
+              Email rules
+            </div>
+            <div class="form-floating">
+              <input
+                type="password"
+                class="form-control"
+                id="profile-input-password"
+                placeholder="Password"
+              />
+              <label for="profile-input-password">Password</label>
+            </div>
+            <div
+              class="alert alert-danger d-none"
+              role="alert"
+              id="profile-alert-password"
+            >
+              Name rules
+            </div>
+            <button class="btn btn-danger" disabled="true" id="profile-btn">
+              Update
+            </button>
+          </form>
+        </div>
+        <!-- 404 Page not found Page -->
+        <div id="page-not-found-page" class="d-none"></div>
+      </main>
+      <footer class="border-top pt-3 d-flex justify-content-center">
+        2023©️
+      </footer>
+    </div>
+    <script src="../src/app.js" type="module"></script>
+  </body>
+</html>
