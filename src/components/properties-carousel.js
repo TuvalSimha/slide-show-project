@@ -17,12 +17,12 @@ const updatePropertiesCarousel = (propertiesArrFromHomePage) => {
 };
 
 const initializeBtns = () => {
-  document.getElementById("back-carusel-btn").addEventListener("click", () => {
+  document.getElementById("back-carousel-btn").addEventListener("click", () => {
     if (animationInProgress) return;
     animateCarousel(-1);
   });
 
-  document.getElementById("next-carusel-btn").addEventListener("click", () => {
+  document.getElementById("next-carousel-btn").addEventListener("click", () => {
     if (animationInProgress) return;
     animateCarousel(1);
   });
