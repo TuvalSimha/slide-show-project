@@ -26,103 +26,74 @@
   </head>
   <body>
 
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-0 py-3">
+      <div class="container-xl">
+        <!-- Logo -->
+        <a class="navbar-brand" href="#">
+          <img src="https://preview.webpixels.io/web/img/logos/clever-light.svg" class="h-8" alt="...">
+        </a>
+        <!-- Navbar toggle -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Collapse -->
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <!-- Nav -->
+          <div class="navbar-nav mx-lg-auto">
+            <a class="nav-item nav-link active" id="nav-home-link" href="#" aria-current="page">Home</a>
+            <a class="nav-item nav-link" id="nav-aboutus-link" href="#">About Us</a>
+            <a class="nav-item nav-link" href="#" id="nav-add-new-property-link">Add new property</a>
+          </div>
+          <form
+          role="search"
+          class="d-flex responsive-nav-flex"
+          id="navBeforeLogin"
+        >
+          <!-- Right navigation -->
+          <div class="navbar-nav ms-lg-4">
+            <a class="nav-item nav-link" href="#" id="nav-login-page">Sign in</a>
+          </div>
+          <!-- Action -->
+          <div class="d-flex align-items-lg-center mt-3 mt-lg-0">
+            <a href="#" class="btn btn-sm btn-primary w-full w-lg-auto" id="nav-register-page">
+              Register
+            </a>
+          </div>
+        </form>
+          <form
+          role="search"
+          class="d-flex responsive-nav-flex d-none"
+          id="navAfterLogin"
+        >
+        <div class="navbar-nav ms-lg-4">
+          <a
+              class="nav-item nav-link"
+              href="#"
+              id="nav-edit-profile-page"
+              >Name</a
+            >
+          </div>
+          <!-- Action -->
+          <div class="d-flex align-items-lg-center mt-3 mt-lg-0">
+            <a
+              href="#"
+              class="btn btn-sm btn-primary w-full w-lg-auto"
+              id="nav-logout"
+            >
+              Logout
+            </a>
+          </div>
+        </form>
+        </div>
+      </div>
+    </nav>
+
 
 
 
     
     <div class="container">
-      <nav class="navbar navbar-expand-lg navbar-light bg-light px-0 py-3">
-        <div class="container-xl">
-          <!-- Logo -->
-          <a class="navbar-brand" href="/public/index.html">
-            <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="currentColor" class="bi bi-bicycle" viewBox="0 0 16 16">
-              <path d="M4 4.5a.5.5 0 0 1 .5-.5H6a.5.5 0 0 1 0 1v.5h4.14l.386-1.158A.5.5 0 0 1 11 4h1a.5.5 0 0 1 0 1h-.64l-.311.935.807 1.29a3 3 0 1 1-.848.53l-.508-.812-2.076 3.322A.5.5 0 0 1 8 10.5H5.959a3 3 0 1 1-1.815-3.274L5 5.856V5h-.5a.5.5 0 0 1-.5-.5zm1.5 2.443-.508.814c.5.444.85 1.054.967 1.743h1.139L5.5 6.943zM8 9.057 9.598 6.5H6.402L8 9.057zM4.937 9.5a1.997 1.997 0 0 0-.487-.877l-.548.877h1.035zM3.603 8.092A2 2 0 1 0 4.937 10.5H3a.5.5 0 0 1-.424-.765l1.027-1.643zm7.947.53a2 2 0 1 0 .848-.53l1.026 1.643a.5.5 0 1 1-.848.53L11.55 8.623z"/>
-            </svg>
-          </a>
-          <!-- Navbar toggle -->
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarCollapse"
-            aria-controls="navbarCollapse"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <!-- Collapse -->
-          <div class="collapse navbar-collapse" id="navbarCollapse">
-            <!-- Nav -->
-            <div class="navbar-nav mx-lg-auto">
-              <a
-                class="nav-item nav-link active"
-                href="#"
-                aria-current="page"
-                id="nav-home-link"
-                >Home</a
-              >
-              <a class="nav-item nav-link" href="#" id="nav-aboutus-link"
-                >About Us</a
-              >
-              <a
-                class="nav-item nav-link"
-                href="#"
-                id="nav-add-new-property-link"
-                >Add new property</a
-              >
-            </div>
-            <!-- Right navigation -->
-            <ul class="navbar-nav">
-              <form
-                class="d-flex responsive-nav-flex"
-                role="search"
-                id="navBeforeLogin"
-              >
-                <div class="navbar-nav ms-lg-4">
-                  <a class="nav-item nav-link" href="#" id="nav-login-page"
-                    >Sign in</a
-                  >
-                </div>
-                <!-- Action -->
-                <div class="d-flex align-items-lg-center mt-3 mt-lg-0">
-                  <a
-                    href="#"
-                    class="btn btn-sm btn-primary w-full w-lg-auto"
-                    id="nav-register-page"
-                  >
-                    Register
-                  </a>
-                </div>
-              </form>
-              <form
-                class="d-flex responsive-nav-flex d-none"
-                role="search"
-                id="navAfterLogin"
-              >
-                <div class="navbar-nav ms-lg-4">
-                  <a
-                    class="nav-item nav-link"
-                    href="#"
-                    id="nav-edit-profile-page"
-                    >Name</a
-                  >
-                </div>
-                <!-- Action -->
-                <div class="d-flex align-items-lg-center mt-3 mt-lg-0">
-                  <a
-                    href="#"
-                    class="btn btn-sm btn-primary w-full w-lg-auto"
-                    id="nav-logout"
-                  >
-                    Logout
-                  </a>
-                </div>
-              </form>
-            </ul>
-          </div>
-        </div>
-      </nav>
+     
       <!-- TODO: Delete toast? -->
       <div id="toast"></div>
       <main>
