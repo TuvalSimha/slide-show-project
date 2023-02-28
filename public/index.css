@@ -52,3 +52,8 @@
     flex-direction: column;
   }
 }
+
+/* Path: public/index.css */
+.home-page {
+  margin-top: 5rem;
+}
