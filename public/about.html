@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bike to bike</title>
+    <title>Almost Free RealEstate</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
@@ -22,6 +22,7 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
     />
     <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="about.css" />
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-0 py-3">
@@ -38,7 +39,7 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <!-- Nav -->
           <div class="navbar-nav mx-lg-auto">
-            <a class="nav-item nav-link active" id="nav-home-link" href="#" aria-current="page">Home</a>
+            <a class="nav-item nav-link active" id="nav-home-link" href="./index.html" aria-current="page">Home</a>
             <a class="nav-item nav-link" id="nav-aboutus-link" href="./about.html">About Us</a>
             <a class="nav-item nav-link" href="#" id="nav-add-new-property-link">Add new property</a>
           </div>
@@ -85,224 +86,78 @@
         </div>
       </div>
     </nav>
-
     <main>
-      <div id="home-page d-block" class="pt-xxl-5 pb-32">
-        <div>
-        <div class="container-lg max-w-screen-xl">
-          <!-- Theme title -->
-          <div class="row g-6 align-items-center">
-            <div class="col-lg-7 mx-auto text-lg-center">
-              <!-- Title -->
-              <h1 class="ls-tight font-bolder display-4 mb-7">
-                Time to bike!
-              </h1>
-              <!-- Text -->
-              <p class="lead mb-12">
-                Or David, you're not going to believe this, but I think I'm falling in love with you.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div style="background-image: url('/public/assets/imgs/bike-wallpaper.jpeg'); height: 800px;
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: 50% 50%;
-        background-attachment: fixed;">
-        </div>
-        <div class="wrapper">
-          <div class="title">
-            Take a look at our bikes
-          </div>
-          <a
-          id="homeDisplaySortDESC"
-          class="btn btn-primary">             
-          <i class="bi bi-sort-alpha-up"></i>
-         </a>
-          <a
-          id="homeDisplaySortASC"
-          class="btn btn-primary">
-          <i class="bi bi-sort-alpha-down"></i>
-          </a>
-          <div class="tabs_wrap">
-            <ul>
-              <li id="homeDisplayList" >Bike List</li>
-              <li id="homeDisplayGallery">Bike Gallery</li>
-              <li id="homeDisplayCarousel" class="active">Bike Carousel</li>
-            </ul>
-          </div>
-          <div class="container">
-            <ul>
-              <li class="item_wrap male online">
-                <div class="item">
-                  <div id="propertiesList"  class="item_left">
-                    <ul class="list-group" id="home-page-properties-list"></ul>
-                  </div>
-                </div>
-              </li>
-              <li  class="item_wrap bike-list online">
-                <div class="item">
-                  <div id="propertiesGallery" class="d-none">
-                    <div
-                      class="row row-cols-1 row-cols-md-3 g-4"
-                      id="home-page-properties-gallery"
-                    ></div>
-                  </div>
-                </div>
-              </li>
-              <li class="item_wrap female online">
-                <div class="item">
-                  <div class="carousel d-none" id="propertiesCarousel">
-                    <div class="img-container" id="home-page-properties-carousel"></div>
-                    <div class="d-flex justify-content-around">
-                      <button
-                        type="button"
-                        class="btn btn-primary"
-                        id="back-carousel-btn"
-                      >
-                        <i class="bi bi-arrow-left"></i>
-                      </button>
-                      <button
-                        type="button"
-                        class="btn btn-primary"
-                        id="next-carousel-btn"
-                      >
-                        <i class="bi bi-arrow-right"></i>
-                      </button>
-                    </div>
-                  </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-          <script src="../src/components/tabs.js"></script>
-
-
-
-        <!-- Home page -->
-          <div
-            class="popup-wrapper d-flex justify-content-center align-items-center d-none"
-            id="editPropertiesPopup"
-          >
-            <div class="popup-div" id="editPropertiesPopupChild">
-              <div class="card">
-                <img
-                  src=""
-                  class="card-img-top"
-                  alt=""
-                  id="editPropertiesPopupImgDisplay"
-                />
-                <div class="card-body">
-                  <h5 class="card-title">
-                    <div class="form-floating mb-3">
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="editPropertiesPopupName"
-                        placeholder="Name"
-                      />
-                      <label for="editPropertiesPopupName">Name</label>
-                    </div>
-                  </h5>
-                  <div class="card-text">
-                    <div class="form-floating">
-                      <textarea
-                        class="form-control"
-                        placeholder="description"
-                        id="editPropertiesPopupDescription"
-                      ></textarea>
-                      <label for="editPropertiesPopupDescription"
-                        >Description</label
-                      >
-                    </div>
-                  </div>
-                </div>
-                <ul class="list-group list-group-flush">
-                  <li class="list-group-item">
-                    <div class="form-floating mb-3">
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="editPropertiesPopupPrice"
-                        placeholder="Price"
-                      />
-                      <label for="editPropertiesPopupPrice">Price</label>
-                    </div>
-                  </li>
-                  <li class="list-group-item">
-                    <div class="form-floating mb-3">
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="editPropertiesPopupImg"
-                        placeholder="Img"
-                      />
-                      <label for="editPropertiesPopupImg">Img</label>
-                    </div>
-                  </li>
-                </ul>
-                <div class="card-body">
-                  <button
-                    type="button"
-                    class="btn btn-success"
-                    id="editPropertiesPopupSaveBtn"
-                  >
-                    <i class="bi bi-check-circle-fill"></i> Save
-                  </button>
-                  <button
-                    type="button"
-                    class="btn btn-danger"
-                    id="editPropertiesPopupCancelBtn"
-                  >
-                    <i
-                      class="bi bi-x-circle-fill"
-                      id="editPropertiesPopupCancelBtnIcon"
-                    ></i>
-                    Cancel
-                  </button>
-                </div>
+<section class="blog-area pb-5">
+  <div class="container">
+    <p class="about-us-title">
+      About Us
+    </p>
+     <div class="row justify-content-center">
+        <div class="col-lg-4 col-md-8 col-sm-10">
+           <div class="single-blog blog-style-one">
+              <div class="blog-image">
+                 <a href="javascript:void(0)"
+                    ><img src="./assets/imgs/about1.jpeg" alt="Blog"
+                    /></a>
               </div>
-            </div>
-          </div>
+              <div class="blog-content">
+                 <h5 class="blog-title">
+                    <a href="javascript:void(0)">
+                      Or David!!!
+                    </a>
+                 </h5>
+                 <p class="text">
+                  Or David!!! Or David!!! Or David!!! Or David!!! Or David!!! Or David!!! Or David!!! Or David!!!
 
-          <!-- display all propertiues of the images -->
-          <div id="propertiesGallery" class="d-none">
-            <div
-              class="row row-cols-1 row-cols-md-3 g-4"
-              id="home-page-properties-gallery"
-            ></div>
-          </div>
-          <div id="propertiesList" class="d-none">
-            <ul class="list-group" id="home-page-properties-list"></ul>
-          </div>
-          <div class="carousel d-none" id="propertiesCarousel">
-            <div class="img-container" id="home-page-properties-carousel"></div>
-            <div class="d-flex justify-content-around">
-              <button
-                type="button"
-                class="btn btn-primary"
-                id="back-carousel-btn"
-              >
-                <i class="bi bi-arrow-left"></i>
-              </button>
-              <button
-                type="button"
-                class="btn btn-primary"
-                id="next-carousel-btn"
-              >
-                <i class="bi bi-arrow-right"></i>
-              </button>
-            </div>
-          </div>
+                 </p>
+              </div>
+           </div>
+           <!-- single blog -->
         </div>
-      </div>
+        <div class="col-lg-4 col-md-8 col-sm-10">
+           <div class="single-blog blog-style-one">
+              <div class="blog-image">
+                 <a href="javascript:void(0)"
+                    ><img src="./assets/imgs/about2.jpeg" alt="Blog"
+                    /></a>              </div>
+              <div class="blog-content">
+                 <h5 class="blog-title">
+                    <a href="javascript:void(0)">
+                      Or David!!!
+                    </a>
+                 </h5>
+                 <p class="text">
+                  Or David!!! Or David!!! Or David!!! Or David!!! Or David!!! Or David!!! Or David!!! Or David!!!
 
-
-        <!-- about us -->
-        <div id="about-us" class="d-none">
-          <h1>About us</h1>
+                 </p>
+              </div>
+           </div>
+           <!-- single blog -->
         </div>
+        <div class="col-lg-4 col-md-8 col-sm-10">
+           <div class="single-blog blog-style-one">
+              <div class="blog-image">
+                 <a href="javascript:void(0)"
+                    ><img src="./assets/imgs/about3.jpeg" alt="Blog"
+                    /></a>
+              </div>
+              <div class="blog-content">
+                 <h5 class="blog-title">
+                    <a href="javascript:void(0)">
+                    Or David!!!
+                    </a>
+                 </h5>
+                 <p class="text">
+                  Or David!!! Or David!!! Or David!!! Or David!!! Or David!!! Or David!!! Or David!!! Or David!!!
+                 </p>
+              </div>
+           </div>
+           <!-- single blog -->
+        </div>
+     </div>
+  </div>
+</section>
+
         <!-- register page -->
         <div id="register-page" class="d-none">
           <h1>Register page</h1>
