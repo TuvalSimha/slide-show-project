@@ -5,6 +5,7 @@ const PAGES = {
   LOGIN: "login-page",
   PROFILE: "profile-page",
   PAGE404: "page-not-found-page",
+  BIKES: "our-bikes-page",
 };
 
 export default PAGES;
