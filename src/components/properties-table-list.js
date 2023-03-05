@@ -1,8 +1,10 @@
 let propertiesArr;
 let tableDiv;
-const initialPropertiesTable = (propertiesArrFromHomePage) => {
+let isAdmin;
+const initialPropertiesTable = (propertiesArrFromHomePage, isAdminParam) => {
   tableDiv = document.getElementById("table-properties-list");
   updatePropertiesTable(propertiesArrFromHomePage);
+  isAdmin = isAdminParam;
 };
 
 const updatePropertiesTable = (propertiesArrFromHomePage) => {
@@ -10,18 +12,31 @@ const updatePropertiesTable = (propertiesArrFromHomePage) => {
   createTable();
 };
 
-const createRecord = (name, description, price, img) => {
+const createRecord = (name, description, price, img, id) => {
+  const deleteOption = `
+  <td>
+<a
+  type="button"
+  class="btn btn-sm btn-danger"
+  id="propertyListDeleteBtn-${id}"
+ >
+    Delete
+ </a>
+</td>
+`;
   return `
   <tr>
   <td>${name}</td>
   <td>${description ? description : ""}</td>
   <td>${price ? price + "$" : ""}</td>
-  <td>          <img
+  <td> 
+  <img
   src="${img ? img : "../public/assets/imgs/missing-image.png"}"
   class="img-fluid"
   alt="${name}"
-/>
-</td>
+  />
+  </td>
+  ${isAdmin ? deleteOption : "<td>Only admin can delete properties</td>"}
   </tr>
   `;
 };
