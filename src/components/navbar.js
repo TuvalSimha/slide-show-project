@@ -30,7 +30,7 @@ const initializeNavbar = (showPopupFromApp) => {
 
   // Add an event listener to the Add New Property link in the navbar
   navAddNewPropertyLink = document.getElementById("nav-add-new-property-link");
-  if (isAdmin) {
+  if (!isAdmin) {
     navAddNewPropertyLink.classList.add("d-none");
   }
   navAddNewPropertyLink.addEventListener("click", showPopup);

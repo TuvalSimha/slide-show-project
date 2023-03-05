@@ -47,7 +47,7 @@ const createItem = (name, description, price, img, id) => {
     </div>
   `;
   return `
-  <div class="card">
+  <div class="card-main">
   <img src="${
     img ? img : "../public/assets/imgs/missing-image.png"
   }" class="card-img-top" alt="${name ? name : "Missing image"}/>
@@ -55,8 +55,8 @@ const createItem = (name, description, price, img, id) => {
     <h5 class="card-title">${name ? name : ""}</h5>
     <p class="card-text">${description ? description : ""}</p>
     <h5 class="card-title text-center">Price: ${price ? price + "$" : ""}</h5>
-    <a href="#!" class="btn btn-primary">Call us for the best price!</a>
-    ${!isAdmin ? adminBtns : ""}
+    <button onclick="callNumber()" class="btn btn-primary">Call us for the best price!</button>
+    ${isAdmin ? adminBtns : ""}
   </div>
 </div>
   `;
