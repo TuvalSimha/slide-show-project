@@ -5,7 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bike to bike</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -22,56 +27,86 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
     />
     <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="shake.css" />
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-0 py-3">
-      <div class="container-xl">
-        <!-- Logo -->
-        <a class="navbar-brand" href="#">
-          <img src="https://preview.webpixels.io/web/img/logos/clever-light.svg" class="h-8" alt="...">
-        </a>
-        <!-- Navbar toggle -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">logo here</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarScroll"
+          aria-controls="navbarScroll"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
           <span class="navbar-toggler-icon"></span>
         </button>
-        <!-- Collapse -->
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-          <!-- Nav -->
-          <div class="navbar-nav mx-lg-auto">
-            <a class="nav-item nav-link active" id="nav-home-link" href="#" aria-current="page">Home</a>
-            <a class="nav-item nav-link" id="nav-aboutus-link" href="./about.html">About Us</a>
-            <a class="nav-item nav-link" href="#" id="nav-add-new-property-link">Add new property</a>
-          </div>
-          <form
+        <div class="collapse navbar-collapse" id="navbarScroll">
+          <ul
+            class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll"
+            style="--bs-scroll-height: 100px"
+          >
+            <li class="nav-item">
+              <a
+                id="nav-home-link"
+                class="nav-link active"
+                aria-current="page"
+                href="../public/index.html"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a aria-current="page" id="nav-aboutus-link" class="nav-link"
+                >About Us</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="nav-bikes-link" href="#">Our Bikes</a>
+            </li>
+            <li class="nav-item">
+              <a id="nav-add-new-property-link" class="nav-link"
+                >Add new property</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- Display before login -->
+        <form
           role="search"
           class="d-flex responsive-nav-flex"
           id="navBeforeLogin"
         >
-          <!-- Right navigation -->
           <div class="navbar-nav ms-lg-4">
-            <a class="nav-item nav-link" href="#" id="nav-login-page">Sign in</a>
+            <a class="nav-item nav-link" href="#" id="nav-login-page"
+              >Sign in</a
+            >
           </div>
-          <!-- Action -->
           <div class="d-flex align-items-lg-center mt-3 mt-lg-0">
-            <a href="#" class="btn btn-sm btn-primary w-full w-lg-auto" id="nav-register-page">
+            <a
+              href="#"
+              class="btn btn-sm btn-primary w-full w-lg-auto"
+              id="nav-register-page"
+            >
               Register
             </a>
           </div>
         </form>
-          <form
+
+        <!-- Display after login -->
+        <form
           role="search"
           class="d-flex responsive-nav-flex d-none"
           id="navAfterLogin"
         >
-        <div class="navbar-nav ms-lg-4">
-          <a
-              class="nav-item nav-link"
-              href="#"
-              id="nav-edit-profile-page"
+          <div class="navbar-nav ms-lg-4">
+            <a class="nav-item nav-link" href="#" id="nav-edit-profile-page"
               >Name</a
             >
           </div>
-          <!-- Action -->
           <div class="d-flex align-items-lg-center mt-3 mt-lg-0">
             <a
               href="#"
@@ -82,391 +117,815 @@
             </a>
           </div>
         </form>
-        </div>
       </div>
     </nav>
 
     <main>
-      <div id="home-page d-block" class="pt-xxl-5 pb-32">
-        <div>
-        <div class="container-lg max-w-screen-xl">
-          <!-- Theme title -->
-          <div class="row g-6 align-items-center">
-            <div class="col-lg-7 mx-auto text-lg-center">
-              <!-- Title -->
-              <h1 class="ls-tight font-bolder display-4 mb-7">
-                Time to bike!
-              </h1>
-              <!-- Text -->
-              <p class="lead mb-12">
-                Or David, you're not going to believe this, but I think I'm falling in love with you.
+      <!-- Hero section main page - Right -->
+      <div id="home-page">
+        <!-- Home page start -->
+        <div class="container col-xxl-8 px-4 py-5">
+          <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+            <div class="col-10 col-sm-8 col-lg-6">
+              <img
+                src="../public/assets/imgs/hero.png"
+                class="d-block mx-lg-auto img-fluid"
+                alt="Bootstrap Themes"
+                width="700"
+                height="500"
+                loading="lazy"
+              />
+            </div>
+            <div class="col-lg-6">
+              <h1 class="display-5 fw-bold lh-1 mb-3">Sport bikes</h1>
+              <p class="lead">
+                Or David Or David Or David Or David Or David Or David Or David
+                Or David Or David Or David Or David Or David Or David
+              </p>
+              <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                <a
+                  type="button"
+                  class="btn btn-primary btn-lg px-4 me-md-2"
+                  href="#propertiesList"
+                >
+                  Explore our bikes!
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container col-xxl-8 px-4 py-5">
+          <div class="row flex-lg-row align-items-center g-5 py-5">
+            <div class="col-10 col-sm-8 col-lg-6">
+              <img
+                src="../public/assets/imgs/hero-2.png"
+                class="d-block mx-lg-auto img-fluid"
+                alt="Bootstrap Themes"
+                width="700"
+                height="500"
+                loading="lazy"
+              />
+            </div>
+            <div class="col-lg-6">
+              <h1 class="display-5 fw-bold lh-1 mb-3">Classic bikes</h1>
+              <p class="lead">
+                Or David Or David Or David Or David Or David Or David Or David
+                Or David Or David Or David Or David Or David Or David
               </p>
             </div>
           </div>
         </div>
-        <div style="background-image: url('/public/assets/imgs/bike-wallpaper.jpeg'); height: 800px;
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: 50% 50%;
-        background-attachment: fixed;">
-        </div>
-        <div class="wrapper">
-          <div class="title">
-            Take a look at our bikes
-          </div>
-          <a
-          id="homeDisplaySortDESC"
-          class="btn btn-primary">             
-          <i class="bi bi-sort-alpha-up"></i>
-         </a>
-          <a
-          id="homeDisplaySortASC"
-          class="btn btn-primary">
-          <i class="bi bi-sort-alpha-down"></i>
-          </a>
-          <div class="tabs_wrap">
-            <ul>
-              <li id="homeDisplayList" >Bike List</li>
-              <li id="homeDisplayGallery">Bike Gallery</li>
-              <li id="homeDisplayCarousel" class="active">Bike Carousel</li>
-            </ul>
-          </div>
-          <div class="container">
-            <ul>
-              <li class="item_wrap male online">
-                <div class="item">
-                  <div id="propertiesList"  class="item_left">
-                    <ul class="list-group" id="home-page-properties-list"></ul>
-                  </div>
-                </div>
-              </li>
-              <li  class="item_wrap bike-list online">
-                <div class="item">
-                  <div id="propertiesGallery" class="d-none">
-                    <div
-                      class="row row-cols-1 row-cols-md-3 g-4"
-                      id="home-page-properties-gallery"
-                    ></div>
-                  </div>
-                </div>
-              </li>
-              <li class="item_wrap female online">
-                <div class="item">
-                  <div class="carousel d-none" id="propertiesCarousel">
-                    <div class="img-container" id="home-page-properties-carousel"></div>
-                    <div class="d-flex justify-content-around">
-                      <button
-                        type="button"
-                        class="btn btn-primary"
-                        id="back-carousel-btn"
-                      >
-                        <i class="bi bi-arrow-left"></i>
-                      </button>
-                      <button
-                        type="button"
-                        class="btn btn-primary"
-                        id="next-carousel-btn"
-                      >
-                        <i class="bi bi-arrow-right"></i>
-                      </button>
-                    </div>
-                  </div>
-              </li>
-            </ul>
-          </div>
+
+        <div id="propertiesList">
+          <h1 class="display-5 fw-bold flex-row text-center mb-5">Our Bikes</h1>
+          <div
+            class="row justify-content-center d-flex"
+            id="home-page-properties-list"
+          ></div>
         </div>
       </div>
-          <script src="../src/components/tabs.js"></script>
+      <!-- Home page end -->
 
+      <!-- About us page start -->
+      <div id="about-us" class="d-none">
+        <!-- Team-->
+        <div class="bg-light py-5">
+          <div class="container py-5">
+            <div class="row mb-4">
+              <div class="col-lg-5">
+                <h2 class="display-4 font-weight-light">Our team</h2>
+                <p class="font-italic text-muted">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                </p>
+              </div>
+            </div>
 
+            <div class="row text-center">
+              <!-- Team item-->
+              <div class="col-xl-3 col-sm-6 mb-5">
+                <div class="bg-white rounded shadow-sm py-5 px-4">
+                  <img
+                    src="https://bootstrapious.com/i/snippets/sn-about/avatar-4.png"
+                    alt=""
+                    width="100"
+                    class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm"
+                  />
+                  <h5 class="mb-0">Manuella Nevoresky</h5>
+                  <span class="small text-uppercase text-muted"
+                    >CEO - Founder</span
+                  >
+                  <ul class="social mb-0 list-inline mt-3">
+                    <li class="list-inline-item">
+                      <a href="#" class="social-link"
+                        ><i class="fa fa-facebook-f"></i
+                      ></a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a href="#" class="social-link"
+                        ><i class="fa fa-twitter"></i
+                      ></a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a href="#" class="social-link"
+                        ><i class="fa fa-instagram"></i
+                      ></a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a href="#" class="social-link"
+                        ><i class="fa fa-linkedin"></i
+                      ></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <!-- End-->
 
-        <!-- Home page -->
-          <div
-            class="popup-wrapper d-flex justify-content-center align-items-center d-none"
-            id="editPropertiesPopup"
-          >
-            <div class="popup-div" id="editPropertiesPopupChild">
-              <div class="card">
-                <img
-                  src=""
-                  class="card-img-top"
-                  alt=""
-                  id="editPropertiesPopupImgDisplay"
-                />
-                <div class="card-body">
-                  <h5 class="card-title">
-                    <div class="form-floating mb-3">
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="editPropertiesPopupName"
-                        placeholder="Name"
-                      />
-                      <label for="editPropertiesPopupName">Name</label>
-                    </div>
-                  </h5>
-                  <div class="card-text">
-                    <div class="form-floating">
-                      <textarea
-                        class="form-control"
-                        placeholder="description"
-                        id="editPropertiesPopupDescription"
-                      ></textarea>
-                      <label for="editPropertiesPopupDescription"
-                        >Description</label
-                      >
-                    </div>
+              <!-- Team item-->
+              <div class="col-xl-3 col-sm-6 mb-5">
+                <div class="bg-white rounded shadow-sm py-5 px-4">
+                  <img
+                    src="https://bootstrapious.com/i/snippets/sn-about/avatar-3.png"
+                    alt=""
+                    width="100"
+                    class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm"
+                  />
+                  <h5 class="mb-0">Samuel Hardy</h5>
+                  <span class="small text-uppercase text-muted"
+                    >CEO - Founder</span
+                  >
+                  <ul class="social mb-0 list-inline mt-3">
+                    <li class="list-inline-item">
+                      <a href="#" class="social-link"
+                        ><i class="fa fa-facebook-f"></i
+                      ></a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a href="#" class="social-link"
+                        ><i class="fa fa-twitter"></i
+                      ></a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a href="#" class="social-link"
+                        ><i class="fa fa-instagram"></i
+                      ></a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a href="#" class="social-link"
+                        ><i class="fa fa-linkedin"></i
+                      ></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <!-- End-->
+
+              <!-- Team item-->
+              <div class="col-xl-3 col-sm-6 mb-5">
+                <div class="bg-white rounded shadow-sm py-5 px-4">
+                  <img
+                    src="https://bootstrapious.com/i/snippets/sn-about/avatar-2.png"
+                    alt=""
+                    width="100"
+                    class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm"
+                  />
+                  <h5 class="mb-0">Tom Sunderland</h5>
+                  <span class="small text-uppercase text-muted"
+                    >CEO - Founder</span
+                  >
+                  <ul class="social mb-0 list-inline mt-3">
+                    <li class="list-inline-item">
+                      <a href="#" class="social-link"
+                        ><i class="fa fa-facebook-f"></i
+                      ></a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a href="#" class="social-link"
+                        ><i class="fa fa-twitter"></i
+                      ></a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a href="#" class="social-link"
+                        ><i class="fa fa-instagram"></i
+                      ></a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a href="#" class="social-link"
+                        ><i class="fa fa-linkedin"></i
+                      ></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <!-- End-->
+
+              <!-- Team item-->
+              <div class="col-xl-3 col-sm-6 mb-5">
+                <div class="bg-white rounded shadow-sm py-5 px-4">
+                  <img
+                    src="https://bootstrapious.com/i/snippets/sn-about/avatar-1.png"
+                    alt=""
+                    width="100"
+                    class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm"
+                  />
+                  <h5 class="mb-0">John Tarly</h5>
+                  <span class="small text-uppercase text-muted"
+                    >CEO - Founder</span
+                  >
+                  <ul class="social mb-0 list-inline mt-3">
+                    <li class="list-inline-item">
+                      <a href="#" class="social-link"
+                        ><i class="fa fa-facebook-f"></i
+                      ></a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a href="#" class="social-link"
+                        ><i class="fa fa-twitter"></i
+                      ></a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a href="#" class="social-link"
+                        ><i class="fa fa-instagram"></i
+                      ></a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a href="#" class="social-link"
+                        ><i class="fa fa-linkedin"></i
+                      ></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <!-- End-->
+            </div>
+          </div>
+          <div class="container">
+            <h3 class="text-center">Contact</h3>
+            <p class="text-center"><em>We love our bikers!</em></p>
+            <div class="row test">
+              <div class="col-md-4">
+                <p>Fan? Drop a note.</p>
+                <p>
+                  <span class="glyphicon glyphicon-map-marker"></span>ISRAEL
+                </p>
+                <p>
+                  <span class="glyphicon glyphicon-phone"></span>Phone: Or David
+                </p>
+                <p>
+                  <span class="glyphicon glyphicon-envelope"></span>Email:
+                  ordavid@gmail.com
+                </p>
+              </div>
+              <div class="col-md-8">
+                <div class="row">
+                  <div class="col-sm-6 form-group">
+                    <input
+                      class="form-control"
+                      id="name"
+                      name="name"
+                      placeholder="Name"
+                      type="text"
+                      required
+                      id="about-us-name-input"
+                    />
+                  </div>
+                  <div class="col-sm-6 form-group">
+                    <input
+                      class="form-control"
+                      id="email"
+                      name="email"
+                      placeholder="Email"
+                      type="email"
+                      required
+                    />
                   </div>
                 </div>
-                <ul class="list-group list-group-flush">
-                  <li class="list-group-item">
-                    <div class="form-floating mb-3">
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="editPropertiesPopupPrice"
-                        placeholder="Price"
-                      />
-                      <label for="editPropertiesPopupPrice">Price</label>
-                    </div>
-                  </li>
-                  <li class="list-group-item">
-                    <div class="form-floating mb-3">
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="editPropertiesPopupImg"
-                        placeholder="Img"
-                      />
-                      <label for="editPropertiesPopupImg">Img</label>
-                    </div>
-                  </li>
-                </ul>
-                <div class="card-body">
-                  <button
-                    type="button"
-                    class="btn btn-success"
-                    id="editPropertiesPopupSaveBtn"
-                  >
-                    <i class="bi bi-check-circle-fill"></i> Save
-                  </button>
-                  <button
-                    type="button"
-                    class="btn btn-danger"
-                    id="editPropertiesPopupCancelBtn"
-                  >
-                    <i
-                      class="bi bi-x-circle-fill"
-                      id="editPropertiesPopupCancelBtnIcon"
-                    ></i>
-                    Cancel
-                  </button>
+                <textarea
+                  class="form-control"
+                  id="comments"
+                  name="comments"
+                  placeholder="Comment"
+                  rows="5"
+                ></textarea>
+                <div class="row">
+                  <div class="col-md-12 form-group">
+                    <button
+                      class="btn btn-sm btn-primary w-full w-lg-auto"
+                      type="submit"
+                    >
+                      Send
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
+        </div>
+      </div>
 
-          <!-- display all propertiues of the images -->
-          <div id="propertiesGallery" class="d-none">
+      <!-- Bikes page slide show -->
+      <div id="our-bikes-page" class="d-none">
+        <h1 class="display-5 fw-bold text-center lh-1 mb-3">
+          Explore our bikes
+        </h1>
+        <p class="text-center">
+          Here you can show all our bikes - you can change the way of display by
+          clicking on buttons below
+        </p>
+
+        <ul
+          class="nav nav-pills mb-3 flex-row justify-content-center"
+          id="pills-tab"
+          role="tablist"
+        >
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link active"
+              id="pills-home-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#pills-home"
+              type="button"
+              role="tab"
+              aria-controls="pills-home"
+              aria-selected="true"
+            >
+              Table
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link"
+              id="pills-profile-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#pills-profile"
+              type="button"
+              role="tab"
+              aria-controls="pills-profile"
+              aria-selected="false"
+            >
+              Gallery
+            </button>
+          </li>
+        </ul>
+        <div class="tab-content" id="pills-tabContent">
+          <div
+            class="tab-pane fade show active"
+            id="pills-home"
+            role="tabpanel"
+            aria-labelledby="pills-home-tab"
+          >
+            <table
+              class="table table-striped table-bordered table-sm"
+              cellspacing="0"
+              width="100%"
+            >
+              <thead>
+                <tr>
+                  <th class="th-sm">Name</th>
+                  <th class="th-sm">Description</th>
+                  <th class="th-sm">Price</th>
+                  <th class="th-sm">Image</th>
+                </tr>
+              </thead>
+              <tbody id="table-properties-list"></tbody>
+            </table>
             <div
               class="row row-cols-1 row-cols-md-3 g-4"
               id="home-page-properties-gallery"
             ></div>
           </div>
-          <div id="propertiesList" class="d-none">
-            <ul class="list-group" id="home-page-properties-list"></ul>
-          </div>
-          <div class="carousel d-none" id="propertiesCarousel">
-            <div class="img-container" id="home-page-properties-carousel"></div>
-            <div class="d-flex justify-content-around">
-              <button
-                type="button"
-                class="btn btn-primary"
-                id="back-carousel-btn"
-              >
-                <i class="bi bi-arrow-left"></i>
-              </button>
-              <button
-                type="button"
-                class="btn btn-primary"
-                id="next-carousel-btn"
-              >
-                <i class="bi bi-arrow-right"></i>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-
-        <!-- about us -->
-        <div id="about-us" class="d-none">
-          <h1>About us</h1>
-        </div>
-        <!-- register page -->
-        <div id="register-page" class="d-none">
-          <h1>Register page</h1>
-          <form onsubmit="event.preventDefault()">
-            <div class="form-floating mb-3">
-              <input
-                type="text"
-                class="form-control"
-                id="register-input-name"
-                placeholder="Your name"
-              />
-              <label for="register-input-name">Name</label>
-            </div>
-            <div
-              class="alert alert-danger d-none"
-              role="alert"
-              id="register-alert-name"
-            >
-              Name rules
-            </div>
-            <div class="form-floating mb-3">
-              <input
-                type="email"
-                class="form-control"
-                id="register-input-email"
-                placeholder="name@example.com"
-              />
-              <label for="register-input-email">Email address</label>
-            </div>
-            <div
-              class="alert alert-danger d-none"
-              role="alert"
-              id="register-alert-email"
-            >
-              Email rules
-            </div>
-            <div class="form-floating">
-              <input
-                type="password"
-                class="form-control"
-                id="register-input-password"
-                placeholder="Password"
-              />
-              <label for="register-input-password">Password</label>
-            </div>
-            <div
-              class="alert alert-danger d-none"
-              role="alert"
-              id="register-alert-password"
-            >
-              Name rules
-            </div>
-            <button class="btn btn-danger" disabled="true" id="register-btn">
-              Register
-            </button>
-          </form>
-        </div>
-        <!-- login page -->
-        <div class="container">
-        <div id="login-page" class="d-none">
-          <form onsubmit="event.preventDefault()">
-            <div class="mb-5">
-              <label class="form-label" for="login-input-email">Email address</label>
-              <input
-                type="email"
-                class="form-control"
-                id="login-input-email"
-                placeholder="name@example.com"
-              />
-            </div>
-            <div class="mb-5">
-              <label class="form-label" for="login-input-password">Password</label>
-              <input
-                type="password"
-                class="form-control"
-                id="login-input-password"
-                placeholder="Password"
-                autocomplete="current-password"
-              />
-            </div>
-            <div class="mb-5">
-              <div class="form-check">
-                <input
-                  class="form-check-input"
-                  type="checkbox"
-                  name="check_example"
-                  id="exampleCheck1"
-                />
-                <label class="form-check-label" for="exampleCheck1">
-                  Keep me logged in
-                </label>
+          <div
+            class="tab-pane fade"
+            id="pills-profile"
+            role="tabpanel"
+            aria-labelledby="pills-profile-tab"
+          >
+            <div class="carousel" id="propertiesCarousel">
+              <div
+                class="img-container"
+                id="home-page-properties-carousel"
+              ></div>
+              <div class="d-flex justify-content-around">
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  id="back-carousel-btn"
+                >
+                  <i class="bi bi-arrow-left"></i>
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  id="next-carousel-btn"
+                >
+                  <i class="bi bi-arrow-right"></i>
+                </button>
               </div>
             </div>
-            <div>
-              <a id="login-btn" class="btn btn-primary w-full"> Sign in </a>
-            </div>
-          </form>
+          </div>
         </div>
       </div>
-        
-        <!-- Profile Page -->
-        <div id="profile-page" class="d-none">
-          <h1>Profile page</h1>
-          <form onsubmit="event.preventDefault()">
-            <div class="form-floating mb-3">
-              <input
-                type="text"
-                class="form-control"
-                id="profile-input-name"
-                placeholder="Your name"
-              />
-              <label for="profile-input-name">Name</label>
-            </div>
+
+      <!-- register page -->
+      <div id="register-page" class="d-none">
+        <section class="vh-100" style="background-color: #eee">
+          <div class="container h-100">
             <div
-              class="alert alert-danger d-none"
-              role="alert"
-              id="profile-alert-name"
+              class="row d-flex justify-content-center align-items-center h-100"
             >
-              Name rules
+              <div class="col-lg-12 col-xl-11">
+                <div class="card text-black" style="border-radius: 25px">
+                  <div class="card-body p-md-5">
+                    <div class="row justify-content-center">
+                      <div
+                        class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1"
+                      >
+                        <p
+                          class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4"
+                        >
+                          Sign up
+                        </p>
+
+                        <form onsubmit="event.preventDefault()">
+                          <div class="form-floating mb-3">
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="register-input-name"
+                              placeholder="Your name"
+                            />
+                            <label for="register-input-name">Name</label>
+                          </div>
+                          <div
+                            class="alert alert-danger d-none"
+                            role="alert"
+                            id="register-alert-name"
+                          >
+                            Name rules
+                          </div>
+                          <div class="form-floating mb-3">
+                            <input
+                              type="email"
+                              class="form-control"
+                              id="register-input-email"
+                              placeholder="name@example.com"
+                            />
+                            <label for="register-input-email"
+                              >Email address</label
+                            >
+                          </div>
+                          <div
+                            class="alert alert-danger d-none"
+                            role="alert"
+                            id="register-alert-email"
+                          >
+                            Email rules
+                          </div>
+                          <div class="form-floating">
+                            <input
+                              type="password"
+                              class="form-control"
+                              id="register-input-password"
+                              placeholder="Password"
+                            />
+                            <label for="register-input-password"
+                              >Password</label
+                            >
+                          </div>
+                          <div
+                            class="alert alert-danger d-none"
+                            role="alert"
+                            id="register-alert-password"
+                          >
+                            Name rules
+                          </div>
+                          <button
+                            class="btn btn-danger"
+                            disabled="true"
+                            id="register-btn"
+                          >
+                            Register
+                          </button>
+                        </form>
+                      </div>
+                      <div
+                        class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2"
+                      >
+                        <img
+                          src="../public/assets/imgs/signin.png"
+                          class="img-fluid"
+                          alt="Sample image"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="form-floating mb-3">
-              <input
-                type="email"
-                class="form-control"
-                id="profile-input-email"
-                placeholder="name@example.com"
-              />
-              <label for="profile-input-email">Email address</label>
-            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- login page -->
+      <div id="login-page" class="d-none">
+        <section class="vh-100" style="background-color: #eee">
+          <div class="container h-100">
             <div
-              class="alert alert-danger d-none"
-              role="alert"
-              id="profile-alert-email"
+              class="row d-flex justify-content-center align-items-center h-100"
             >
-              Email rules
+              <div class="col-lg-12 col-xl-11">
+                <div class="card text-black" style="border-radius: 25px">
+                  <div class="card-body p-md-5">
+                    <div class="row justify-content-center">
+                      <div
+                        class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1"
+                      >
+                        <p
+                          class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4"
+                        >
+                          Log in
+                        </p>
+
+                        <form onsubmit="event.preventDefault()">
+                          <div class="mb-5">
+                            <label class="form-label" for="login-input-email"
+                              >Email address</label
+                            >
+                            <input
+                              type="email"
+                              class="form-control"
+                              id="login-input-email"
+                              placeholder="name@example.com"
+                            />
+                          </div>
+                          <div class="mb-5">
+                            <label class="form-label" for="login-input-password"
+                              >Password</label
+                            >
+                            <input
+                              type="password"
+                              class="form-control"
+                              id="login-input-password"
+                              placeholder="Password"
+                              autocomplete="current-password"
+                            />
+                          </div>
+                          <div class="mb-5">
+                            <div class="form-check">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                name="check_example"
+                                id="exampleCheck1"
+                              />
+                              <label
+                                class="form-check-label"
+                                for="exampleCheck1"
+                              >
+                                Keep me logged in
+                              </label>
+                            </div>
+                          </div>
+                          <div>
+                            <a id="login-btn" class="btn btn-primary w-full">
+                              Log in
+                            </a>
+                          </div>
+                        </form>
+                      </div>
+                      <div
+                        class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2"
+                      >
+                        <img
+                          src="assets/imgs/login.png"
+                          class="img-fluid"
+                          alt="Sample image"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="form-floating">
-              <input
-                type="password"
-                class="form-control"
-                id="profile-input-password"
-                placeholder="Password"
-              />
-              <label for="profile-input-password">Password</label>
-            </div>
+          </div>
+        </section>
+      </div>
+
+      <div id="profile-page" class="d-none">
+        <section class="vh-100" style="background-color: #eee">
+          <div class="container h-100">
             <div
-              class="alert alert-danger d-none"
-              role="alert"
-              id="profile-alert-password"
+              class="row d-flex justify-content-center align-items-center h-100"
             >
-              Name rules
+              <div class="col-lg-12 col-xl-11">
+                <div class="card text-black" style="border-radius: 25px">
+                  <div class="card-body p-md-5">
+                    <div class="row justify-content-center">
+                      <div
+                        class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1"
+                      >
+                        <p
+                          class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4"
+                        >
+                          Profile
+                        </p>
+
+                        <form onsubmit="event.preventDefault()">
+                          <div class="form-floating mb-3">
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="profile-input-name"
+                              placeholder="Your name"
+                            />
+                            <label for="profile-input-name">Name</label>
+                          </div>
+                          <div
+                            class="alert alert-danger d-none"
+                            role="alert"
+                            id="profile-alert-name"
+                          >
+                            Name rules
+                          </div>
+                          <div class="form-floating mb-3">
+                            <input
+                              type="email"
+                              class="form-control"
+                              id="profile-input-email"
+                              placeholder="name@example.com"
+                            />
+                            <label for="profile-input-email"
+                              >Email address</label
+                            >
+                          </div>
+                          <div
+                            class="alert alert-danger d-none"
+                            role="alert"
+                            id="profile-alert-email"
+                          >
+                            Email rules
+                          </div>
+                          <div class="form-floating">
+                            <input
+                              type="password"
+                              class="form-control"
+                              id="profile-input-password"
+                              placeholder="Password"
+                            />
+                            <label for="profile-input-password">Password</label>
+                          </div>
+                          <div
+                            class="alert alert-danger d-none"
+                            role="alert"
+                            id="profile-alert-password"
+                          >
+                            Name rules
+                          </div>
+                          <button
+                            class="btn btn-danger mt-3"
+                            disabled="true"
+                            id="profile-btn"
+                          >
+                            Update
+                          </button>
+                        </form>
+                      </div>
+                      <div
+                        class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2"
+                      >
+                        <img
+                          src="assets/imgs/login.png"
+                          class="img-fluid"
+                          alt="Sample image"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <button class="btn btn-danger" disabled="true" id="profile-btn">
-              Update
-            </button>
-          </form>
+          </div>
+        </section>
+      </div>
+
+      <!-- Edit proprty -->
+      <div
+        class="popup-wrapper d-flex justify-content-center align-items-center d-none"
+        id="editPropertiesPopup"
+      >
+        <div class="popup-div" id="editPropertiesPopupChild">
+          <div class="card">
+            <img
+              src=""
+              class="card-img-top"
+              alt=""
+              id="editPropertiesPopupImgDisplay"
+            />
+            <div class="card-body">
+              <h5 class="card-title">
+                <div class="form-floating mb-3">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="editPropertiesPopupName"
+                    placeholder="Name"
+                  />
+                  <label for="editPropertiesPopupName">Name</label>
+                </div>
+              </h5>
+              <div class="card-text">
+                <div class="form-floating">
+                  <textarea
+                    class="form-control"
+                    placeholder="description"
+                    id="editPropertiesPopupDescription"
+                  ></textarea>
+                  <label for="editPropertiesPopupDescription"
+                    >Description</label
+                  >
+                </div>
+              </div>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                <div class="form-floating mb-3">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="editPropertiesPopupPrice"
+                    placeholder="Price"
+                  />
+                  <label for="editPropertiesPopupPrice">Price</label>
+                </div>
+              </li>
+              <li class="list-group-item">
+                <div class="form-floating mb-3">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="editPropertiesPopupImg"
+                    placeholder="Img"
+                  />
+                  <label for="editPropertiesPopupImg">Img</label>
+                </div>
+              </li>
+            </ul>
+            <div class="card-body">
+              <button
+                type="button"
+                class="btn btn-success"
+                id="editPropertiesPopupSaveBtn"
+              >
+                <i class="bi bi-check-circle-fill"></i> Save
+              </button>
+              <button
+                type="button"
+                class="btn btn-danger"
+                id="editPropertiesPopupCancelBtn"
+              >
+                <i
+                  class="bi bi-x-circle-fill"
+                  id="editPropertiesPopupCancelBtnIcon"
+                ></i>
+                Cancel
+              </button>
+            </div>
+          </div>
         </div>
-        <!-- 404 Page not found Page -->
-        <div id="page-not-found-page" class="d-none"></div>
-      </main>
-      <footer class="border-top pt-3 d-flex justify-content-center">
-        2023©️
-      </footer>
-    </div>
+      </div>
+
+      <!-- 404 Page -->
+      <div
+        id="page-not-found-page"
+        class="d-flex align-items-center justify-content-center vh-100 d-none"
+      >
+        <div class="text-center">
+          <h1 class="display-1 fw-bold">404</h1>
+          <p class="fs-3">
+            <span class="text-danger">Opps!</span> Page not found.
+          </p>
+          <p class="lead">The page you’re looking for doesn’t exist.</p>
+          <a href="index.html" class="btn btn-primary">Go Home</a>
+        </div>
+      </div>
+    </main>
+    <footer
+      class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top"
+    >
+      <div class="col-md-4 d-flex align-items-center">
+        <a
+          href="/"
+          class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1"
+        >
+        </a>
+        <span class="mb-3 mb-md-0 text-muted"> Made by Or David - </span>
+        <span id="currentYear" class="mb-3 text-muted"> </span>
+      </div>
+    </footer>
     <script src="../src/app.js" type="module"></script>
+    <script
+      src="../src/components/display-current-year.js"
+      type="module"
+    ></script>
   </body>
 </html>

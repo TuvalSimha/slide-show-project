@@ -1,8 +1,6 @@
-// Import functions
 import Property from "../models/property-class.js";
 import getNextId from "../utils/get-next-id.js";
 
-// Define global variables
 let selectedProperty;
 let editProperty;
 const editPropertiesPopupImgDisplay = document.getElementById(
@@ -22,9 +20,7 @@ const editPropertiesPopupImg = document.getElementById(
 );
 const editPropertiesPopup = document.getElementById("editPropertiesPopup");
 
-// Initialize popup
 const initPopup = (selectedPropertyFromHomePage, editPropertyFromHomePage) => {
-  // Set the selected property data to HTML
   selectedProperty =
     selectedPropertyFromHomePage || new Property(getNextId(), "", 0, "", "");
   editProperty = editPropertyFromHomePage;
@@ -36,7 +32,6 @@ const initPopup = (selectedPropertyFromHomePage, editPropertyFromHomePage) => {
   showPopup();
 };
 
-// Show/hide popup
 const showPopup = () => {
   editPropertiesPopup.classList.remove("d-none");
 };
@@ -44,7 +39,6 @@ const hidePopup = () => {
   editPropertiesPopup.classList.add("d-none");
 };
 
-// Add event listeners
 window.addEventListener("load", () => {
   editPropertiesPopup.addEventListener("click", (ev) => {
     if (
@@ -73,5 +67,4 @@ window.addEventListener("load", () => {
   });
 });
 
-// Export functions
 export { initPopup, showPopup, hidePopup };

@@ -5,6 +5,7 @@ const PAGE_LINKS = {
   [PAGES.ABOUT]: document.getElementById(PAGES.ABOUT),
   [PAGES.LOGIN]: document.getElementById(PAGES.LOGIN),
   [PAGES.REGISTER]: document.getElementById(PAGES.REGISTER),
+  [PAGES.BIKES]: document.getElementById(PAGES.BIKES),
   [PAGES.PROFILE]: document.getElementById(PAGES.PROFILE),
   [PAGES.PAGE404]: document.getElementById(PAGES.PAGE404),
 };

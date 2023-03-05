@@ -29,48 +29,42 @@ const updatePropertiesList = (propertiesArrFromHomePage) => {
 
 const createItem = (name, description, price, img, id) => {
   const adminBtns = `
-  <button type="button" class="btn btn-warning w-100" id="propertyListEditBtn-${id}">
-    <i class="bi bi-pen-fill"></i> Edit
+    <div class="btn-group">
+  <button
+  id="propertyListEditBtn-${id}"
+    type="button"
+    class="btn btn-sm btn-outline-secondary"
+  >
+    Edit
   </button>
-  <button type="button" class="btn btn-danger w-100" id="propertyListDeleteBtn-${id}">
-    <i class="bi bi-x-circle-fill"></i> Delete
-  </button>
+  <button
+    type="button"
+    class="btn btn-sm btn-outline-secondary"
+    id="propertyListDeleteBtn-${id}"
+   >
+      Delete
+   </button>
+    </div>
   `;
   return `
-  <li class="list-group-item">
-    <div class="row">
-        <div class="col-md-2">
-        <img src="${img}" class="img-fluid" alt="${name}" />
-        </div>
-        <div class="col-md-8">
-        <div class="card-body">
-            <h5 class="card-title">${name}</h5>
-            <h6 class="card-subtitle mb-2 text-muted">
-            ${price}
-            </h6>
-            <p class="card-text">
-            ${description}
-            </p>
-        </div>
-        </div>
-        <div class="col-md-2">
-        <button type="button" class="btn btn-success w-100">
-          <i class="bi bi-currency-dollar"></i> Buy now
-        </button>
-        ${isAdmin ? adminBtns : ""}
-        </div>
-    </div>
-    </li>
+  <div class="card">
+  <img src="${
+    img ? img : "../public/assets/imgs/missing-image.png"
+  }" class="card-img-top" alt="${name ? name : "Missing image"}/>
+  <div class="card-body">
+    <h5 class="card-title">${name ? name : ""}</h5>
+    <p class="card-text">${description ? description : ""}</p>
+    <h5 class="card-title text-center">Price: ${price ? price + "$" : ""}</h5>
+    <a href="#!" class="btn btn-primary">Call us for the best price!</a>
+    ${!isAdmin ? adminBtns : ""}
+  </div>
+</div>
   `;
 };
 
 const getIdFromClick = (ev) => {
-  let idFromId = ev.target.id.split("-"); // split the id to array
+  let idFromId = ev.target.id.split("-");
   if (!ev.target.id) {
-    /*
-        if press on icon then there is no id
-        then we need to take the id of the parent which is btn
-      */
     idFromId = ev.target.parentElement.id.split("-");
   }
   return idFromId[1];
@@ -85,9 +79,7 @@ const handleEditBtnClick = (ev) => {
 };
 
 const clearEventListeners = (idKeyword, handleFunction) => {
-  //get all old btns
   let btnsBefore = document.querySelectorAll(`[id^='${idKeyword}-']`);
-  //remove old events
   for (let btn of btnsBefore) {
     btn.removeEventListener("click", handleFunction);
   }
@@ -95,12 +87,9 @@ const clearEventListeners = (idKeyword, handleFunction) => {
 
 const createList = () => {
   let innerStr = "";
-  //clear event listeners for delete btns
   clearEventListeners("propertyListDeleteBtn", handleDeleteBtnClick);
-  //clear event listeners for edit btns
   clearEventListeners("propertyListEditBtn", handleEditBtnClick);
 
-  //create new elements and remove old ones
   for (let property of propertiesArr) {
     innerStr += createItem(
       property.name,
@@ -111,16 +100,12 @@ const createList = () => {
     );
   }
   listDiv.innerHTML = innerStr;
-  // add event listeners for delete btns
   createBtnEventListener("propertyListDeleteBtn", handleDeleteBtnClick);
-  // add event listeners for edit btns
   createBtnEventListener("propertyListEditBtn", handleEditBtnClick);
 };
 
-//Creates event listener for the delete buttons
 const createBtnEventListener = (idKeyword, handleFunction) => {
   let btns = document.querySelectorAll(`[id^='${idKeyword}-']`);
-  //add events to new btns
   for (let btn of btns) {
     btn.addEventListener("click", handleFunction);
   }

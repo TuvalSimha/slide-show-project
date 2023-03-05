@@ -3,6 +3,10 @@ import {
   updatePropertiesGallery,
 } from "../components/properties-gallery.js";
 import {
+  initialPropertiesTable,
+  updatePropertiesTable,
+} from "../components/properties-table-list.js";
+import {
   initialPropertiesList,
   updatePropertiesList,
 } from "../components/properties-list.js";
@@ -15,7 +19,7 @@ import checkIfAdmin from "../utils/check-if-admin.js";
 
 let propertiesArr, originalPropertiesArr, displayNow, isAdmin;
 let homeDisplayList, homeDisplayGallery, homeDisplayCarousel;
-let propertiesGallery, propertiesList, propertiesCarousel;
+let propertiesGallery, propertiesList, propertiesCarousel, propertiesTable;
 
 window.addEventListener("load", () => {
   propertiesArr = JSON.parse(localStorage.getItem("props") || "[]");
@@ -24,6 +28,7 @@ window.addEventListener("load", () => {
   initialPropertiesGallery(propertiesArr);
   initialPropertiesList(propertiesArr, isAdmin, deleteProperty, showPopup);
   initialPropertiesCarousel(propertiesArr);
+  initialPropertiesTable(propertiesArr, isAdmin, deleteProperty, showPopup);
   initializeElements();
   initializeBtns();
 });
@@ -32,7 +37,9 @@ const initializeElements = () => {
   homeDisplayList = document.getElementById("homeDisplayList");
   homeDisplayGallery = document.getElementById("homeDisplayGallery");
   homeDisplayCarousel = document.getElementById("homeDisplayCarousel");
+  homeDisplayTable = document.getElementById("homeDisplayTable");
   propertiesGallery = document.getElementById("propertiesGallery");
+  propertiesTable = document.getElementById("propertiesTable");
   propertiesList = document.getElementById("propertiesList");
   propertiesCarousel = document.getElementById("propertiesCarousel");
   displayNow = propertiesList;
@@ -45,6 +52,9 @@ const initializeBtns = () => {
   );
   homeDisplayGallery.addEventListener("click", () =>
     displayToDisplay(propertiesGallery)
+  );
+  homeDisplayTable.addEventListener("click", () =>
+    displayToDisplay(propertiesTable)
   );
   homeDisplayCarousel.addEventListener("click", () =>
     displayToDisplay(propertiesCarousel)
@@ -76,6 +86,7 @@ const updateDisplays = () => {
   updatePropertiesGallery(propertiesArr);
   updatePropertiesList(propertiesArr);
   updatePropertiesCarousel(propertiesArr);
+  updatePropertiesTable(propertiesArr);
 };
 
 const saveToLocalStorage = (arrToSave) => {
