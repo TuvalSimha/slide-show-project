@@ -1,16 +1,20 @@
+import checkIfAdmin from "../utils/check-if-admin.js";
+
 let propertiesArr;
 let tableDiv;
 let isAdmin;
-const initialPropertiesTable = (propertiesArrFromHomePage, isAdminParam) => {
+
+const initialPropertiesTable = (propertiesArrFromHomePage) => {
   tableDiv = document.getElementById("table-properties-list");
   updatePropertiesTable(propertiesArrFromHomePage);
-  isAdmin = isAdminParam;
 };
 
 const updatePropertiesTable = (propertiesArrFromHomePage) => {
   propertiesArr = propertiesArrFromHomePage;
   createTable();
 };
+
+isAdmin = checkIfAdmin();
 
 const createRecord = (name, description, price, img, id) => {
   const deleteOption = `
