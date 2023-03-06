@@ -3,7 +3,6 @@ let listDiv;
 let isAdmin;
 let deleteProperty;
 let showPopup;
-//this function will transfer data from homepage to this page
 const initialPropertiesList = (
   propertiesArrFromHomePage,
   isAdminParam,
@@ -18,11 +17,6 @@ const initialPropertiesList = (
 };
 
 const updatePropertiesList = (propertiesArrFromHomePage) => {
-  /*
-    this function will get data from homepage and create new list.
-    if the list already exists it will remove the old one and
-    create new one
-  */
   propertiesArr = propertiesArrFromHomePage;
   createList();
 };

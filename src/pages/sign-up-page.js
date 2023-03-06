@@ -4,7 +4,6 @@ import validateEmail from "../utils/validate-email-input.js";
 import validatePassword from "../utils/validate-password-input.js";
 import validateName from "../utils/validate-name-input.js";
 import User from "../models/user-class.js";
-import showToast from "../services/toast.js";
 
 const inputName = document.getElementById("register-input-name");
 const inputEmail = document.getElementById("register-input-email");
@@ -57,15 +56,12 @@ btnRegister.addEventListener("click", () => {
   );
   localStorage.setItem("nextUserId", nextUserId + "");
   if (!users) {
-    //the first user
     users = [newUser];
     localStorage.setItem("users", JSON.stringify(users));
   } else {
-    //we have users
     users = JSON.parse(users);
     for (let user of users) {
       if (user.email === inputEmail.value) {
-        showToast("Email already exists", false);
         return;
       }
     }
