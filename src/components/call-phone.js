@@ -1,4 +1,4 @@
 function callNumber() {
-  const phoneNumber = "1234567890";
+  const phoneNumber = "0542345485";
   window.open(`tel:${phoneNumber}`, "_self");
 }

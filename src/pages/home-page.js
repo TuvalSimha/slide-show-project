@@ -1,8 +1,4 @@
 import {
-  initialPropertiesGallery,
-  updatePropertiesGallery,
-} from "../components/properties-gallery.js";
-import {
   initialPropertiesTable,
   updatePropertiesTable,
 } from "../components/properties-table-list.js";
@@ -18,14 +14,13 @@ import { initPopup } from "../components/popup.js";
 import checkIfAdmin from "../utils/check-if-admin.js";
 
 let propertiesArr, originalPropertiesArr, displayNow, isAdmin;
-let homeDisplayList, homeDisplayGallery, homeDisplayCarousel;
-let propertiesGallery, propertiesList, propertiesCarousel, propertiesTable;
+let homeDisplayList, homeDisplayTable, homeDisplayCarousel;
+let propertiesList, propertiesCarousel, propertiesTable;
 
 window.addEventListener("load", () => {
   propertiesArr = JSON.parse(localStorage.getItem("props") || "[]");
   originalPropertiesArr = [...propertiesArr];
   isAdmin = checkIfAdmin();
-  initialPropertiesGallery(propertiesArr);
   initialPropertiesList(propertiesArr, isAdmin, deleteProperty, showPopup);
   initialPropertiesCarousel(propertiesArr);
   initialPropertiesTable(propertiesArr, isAdmin, deleteProperty, showPopup);
@@ -83,7 +78,6 @@ const displayToDisplay = (toDisplay) => {
 };
 
 const updateDisplays = () => {
-  updatePropertiesGallery(propertiesArr);
   updatePropertiesList(propertiesArr);
   updatePropertiesCarousel(propertiesArr);
   updatePropertiesTable(propertiesArr);
