@@ -23,7 +23,7 @@ window.addEventListener("load", () => {
   isAdmin = checkIfAdmin();
   initialPropertiesList(propertiesArr, isAdmin, deleteProperty, showPopup);
   initialPropertiesCarousel(propertiesArr);
-  initialPropertiesTable(propertiesArr, isAdmin, deleteProperty, showPopup);
+  initialPropertiesTable(propertiesArr);
   initializeElements();
   initializeBtns();
 });
