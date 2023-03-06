@@ -37,7 +37,6 @@ const initializeElements = () => {
   homeDisplayList = document.getElementById("homeDisplayList");
   homeDisplayGallery = document.getElementById("homeDisplayGallery");
   homeDisplayCarousel = document.getElementById("homeDisplayCarousel");
-  homeDisplayTable = document.getElementById("homeDisplayTable");
   propertiesGallery = document.getElementById("propertiesGallery");
   propertiesTable = document.getElementById("propertiesTable");
   propertiesList = document.getElementById("propertiesList");

@@ -1,17 +1,17 @@
 import validateEmail from "../utils/validate-email-input.js";
 import validatePassword from "../utils/validate-password-input.js";
 
-const loginEmailInput = document.querySelector("#login-input-email");
-const loginPasswordInput = document.querySelector("#login-input-password");
-const loginBtn = document.querySelector("#login-btn");
-const emailAlert = document.getElementById("login-alert-email");
-const passwordAlert = document.getElementById("login-alert-password");
+let loginEmailInput = document.querySelector("#login-input-email");
+let loginPasswordInput = document.querySelector("#login-input-password");
+let loginBtn = document.querySelector("#login-btn");
+let emailAlert = document.getElementById("login-alert-email");
+let passwordAlert = document.getElementById("login-alert-password");
 
 function handleInput() {
-  const { value: emailValue } = loginEmailInput;
-  const { value: passwordValue } = loginPasswordInput;
+  let { value: emailValue } = loginEmailInput;
+  let { value: passwordValue } = loginPasswordInput;
 
-  const emailErrors = validateEmail(emailValue);
+  let emailErrors = validateEmail(emailValue);
   if (!emailErrors) {
     return;
   }
@@ -25,7 +25,7 @@ function handleInput() {
     emailAlert.innerHTML = emailErrors.join("<br>");
   }
 
-  const passwordErrors = validatePassword(passwordValue);
+  let passwordErrors = validatePassword(passwordValue);
   if (!passwordErrors) {
     return;
   }
@@ -44,18 +44,19 @@ loginEmailInput.addEventListener("input", handleInput);
 loginPasswordInput.addEventListener("input", handleInput);
 
 loginBtn.addEventListener("click", () => {
-  const emailErrors = validateEmail(loginEmailInput.value);
+  let emailErrors = validateEmail(loginEmailInput.value);
   if (emailErrors.length) {
     return;
   }
 
-  const passwordErrors = validatePassword(loginPasswordInput.value);
+  let passwordErrors = validatePassword(loginPasswordInput.value);
   if (passwordErrors.length) {
     return;
   }
 
-  const users = JSON.parse(localStorage.getItem("users")) || [];
-  const authenticatedUser = users.find(({ email, password }) => {
+  let users = JSON.parse(localStorage.getItem("users")) || [];
+  console.log("users", users);
+  let authenticatedUser = users.find(({ email, password }) => {
     return (
       email === loginEmailInput.value && password === loginPasswordInput.value
     );
@@ -66,8 +67,8 @@ loginBtn.addEventListener("click", () => {
     return;
   }
 
-  const { id, name, isAdmin } = authenticatedUser;
-  const token = { id, name, email: loginEmailInput.value, isAdmin };
+  let { id, name, isAdmin } = authenticatedUser;
+  let token = { id, name, email: loginEmailInput.value, isAdmin };
   localStorage.setItem("token", JSON.stringify(token));
   location.reload();
 });
