@@ -36,7 +36,7 @@
     <link rel="stylesheet" href="shake.css" />
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary" id="navbarId">
       <div class="container-fluid">
         <a class="navbar-brand" href="../public/index.html"
           ><svg
@@ -78,7 +78,11 @@
               >
             </li>
             <li class="nav-item">
-              <a aria-current="page" id="nav-aboutus-link" class="nav-link"
+              <a
+                aria-current="page"
+                id="nav-aboutus-link"
+                class="nav-link"
+                href="#"
                 >About Us</a
               >
             </li>
@@ -883,9 +887,12 @@
     >
       <div class="col-md-4 d-flex align-items-center">
         <a href="/" class="mb-3 me-2 text-muted text-decoration-none lh-1"> </a>
-        <span class="mb-3 text-muted"> Made by Or David - </span>
-        <span id="currentYear" class="mb-3"> </span>
+        <span class="mb-3 text-muted"> Created by Or David - </span>
+        <span id="currentYear" class="mb-3"></span>
       </div>
+      <a href="#navbarId" class="col-md-1 d-flex align-items-center"
+        >Back to top</a
+      >
     </footer>
     <script src="../src/app.js" type="module"></script>
     <script
