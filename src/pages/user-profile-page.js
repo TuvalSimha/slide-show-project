@@ -1,7 +1,6 @@
 import validateEmail from "../utils/validate-email-input.js";
 import validatePassword from "../utils/validate-password-input.js";
 import validateName from "../utils/validate-name-input.js";
-import showToast from "../services/toast.js";
 
 const inputName = document.getElementById("profile-input-name");
 const inputEmail = document.getElementById("profile-input-email");
@@ -63,7 +62,7 @@ const saveChanges = () => {
   const userEmail = users.find((item) => item.email === inputEmail.value);
   const user = users.find((item) => item.id === token.id);
   if (userEmail && user.id !== userEmail.id) {
-    showToast("The email already taken", false);
+    alert("The email already taken - please try again");
     return;
   }
   if (user) {
@@ -72,7 +71,7 @@ const saveChanges = () => {
     user.password = inputPassword.value;
     localStorage.setItem("users", JSON.stringify(users));
     localStorage.setItem("token", JSON.stringify(token));
-    showToast("Saved");
+    alert("Saved");
   }
   setTimeout(() => {
     location.reload();

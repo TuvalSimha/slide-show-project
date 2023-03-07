@@ -38,21 +38,21 @@ const initializeElements = () => {
   propertiesList = document.getElementById("propertiesList");
   propertiesCarousel = document.getElementById("propertiesCarousel");
   displayNow = propertiesList;
-  displayToDisplay(displayNow);
+  displaySwitch(displayNow);
 };
 
 const initializeBtns = () => {
   homeDisplayList.addEventListener("click", () =>
-    displayToDisplay(propertiesList)
+    displaySwitch(propertiesList)
   );
   homeDisplayGallery.addEventListener("click", () =>
-    displayToDisplay(propertiesGallery)
+    displaySwitch(propertiesGallery)
   );
   homeDisplayTable.addEventListener("click", () =>
-    displayToDisplay(propertiesTable)
+    displaySwitch(propertiesTable)
   );
   homeDisplayCarousel.addEventListener("click", () =>
-    displayToDisplay(propertiesCarousel)
+    displaySwitch(propertiesCarousel)
   );
   document
     .getElementById("homeDisplaySortASC")
@@ -65,7 +65,7 @@ const initializeBtns = () => {
     .addEventListener("input", (ev) => searchProperties(ev.target.value));
 };
 
-const displayToDisplay = (toDisplay) => {
+const displaySwitch = (toDisplay) => {
   if (displayNow !== null) {
     displayNow.classList.remove("d-block");
     displayNow.classList.add("d-none");

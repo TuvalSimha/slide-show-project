@@ -2,13 +2,15 @@ const validate = (regex, value, min, max) => {
   let errorMsg = "";
   if (value.length < min || value.length > max) {
     if (value.length < min) {
-      errorMsg += "Text is too short. ";
+      errorMsg +=
+        "Text Is Too Short - please enter at least " + min + " characters.";
     }
     if (value.length > max) {
-      errorMsg += "Text is too long. ";
+      errorMsg +=
+        " Text Is Too Long - please enter no more than " + max + " characters.";
     }
   } else if (!regex.test(value)) {
-    errorMsg = "Text invalid";
+    errorMsg = " Text Is Invalid - please enter a valid text.";
   }
   return errorMsg;
 };
