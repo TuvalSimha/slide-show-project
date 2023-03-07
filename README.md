@@ -36,8 +36,8 @@ Or David - 2023.
 
 ### Web
 
-![Home Page](/assets/imgs/web-screenshot.png "Web - Home Page")
+![Web Home Page](public/assets/imgs/web-screenshot.png "Web - Home Page")
 
 ### Mobile
 
-![Home Page](/assets/imgs/mobile-screenshot.png "Mobile - Home Page")
+![Mobile Home Page](public/assets/imgs/mobile-screenshot.png "Mobile - Home Page")
